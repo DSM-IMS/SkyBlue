@@ -14,6 +14,7 @@ export const Container = styled.div`
 export const Section = styled.div`
 	width: 40%;
 	height: 60px;
+	margin: 10px 0;
 	color: white;
 	background: #a6a6a6;
 	text-align: center;

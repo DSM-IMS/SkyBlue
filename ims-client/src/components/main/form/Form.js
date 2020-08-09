@@ -112,6 +112,16 @@ const Form = () => {
 		setFormItems(formItems.filter((formItem) => !formItem.checked));
 	};
 
+	const onToggle = (id) => {
+		setFormItems(
+			formItems.map((formItem) =>
+				id === formItem.id
+					? { ...formItem, checked: !formItem.checked }
+					: formItem,
+			),
+		);
+	};
+
 	return (
 		<S.Container>
 			{formItems.length ? (
@@ -120,6 +130,7 @@ const Form = () => {
 						<FormItem
 							key={formItem.id}
 							formItem={formItem}
+							onToggle={onToggle}
 							onDeleteOne={onDeleteOne}
 						/>
 					))}

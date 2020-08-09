@@ -4,8 +4,10 @@ export const Container = styled.div`
 	display: flex;
 	width: 100%;
 	height: 100%;
-	background: #f2f2f2;
+	background: #fdfdfd;
 	flex-direction: column;
+
+	overflow: none;
 `;
 
 export const FormWrap = styled.div`

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 import NavItem from './navItem/NavItem';
 

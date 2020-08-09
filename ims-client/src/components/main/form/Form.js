@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './styles';
+import FormItem from './formItem/FormItem';
 
 const Form = () => {
 	const [formItems, setFormItems] = useState([
@@ -29,6 +30,38 @@ const Form = () => {
 		},
 		{
 			id: 4,
+			title: '우유 급식 신청서22',
+			date: '2020.06.1',
+			ongoing: false,
+
+			checked: true,
+		},
+		{
+			id: 5,
+			title: '우유 급식 신청서',
+			date: '2020.06.2',
+			ongoing: false,
+
+			checked: false,
+		},
+		{
+			id: 6,
+			title: '아주 긴 이름의 우유 급식 신청서라고 하는 그런 바로 긴 이름들 ',
+			date: '2020.06.1',
+			ongoing: false,
+
+			checked: false,
+		},
+		{
+			id: 7,
+			title: '우유 급식 신청서',
+			date: '2020.06.1',
+			ongoing: false,
+
+			checked: true,
+		},
+		{
+			id: 8,
 			title: '우유 급식 신청서',
 			date: '2020.06.2',
 			ongoing: true,
@@ -36,8 +69,32 @@ const Form = () => {
 			checked: true,
 		},
 		{
-			id: 5,
+			id: 9,
 			title: '우유 급식 신청서',
+			date: '2020.06.1',
+			ongoing: false,
+
+			checked: false,
+		},
+		{
+			id: 10,
+			title: '우유 급식 신청서22',
+			date: '2020.06.1',
+			ongoing: false,
+
+			checked: true,
+		},
+		{
+			id: 11,
+			title: '우유 급식 신청서',
+			date: '2020.06.2',
+			ongoing: false,
+
+			checked: false,
+		},
+		{
+			id: 12,
+			title: '아주 긴 이름의 우유 급식 신청서라고 하는 그런 바로 긴 이름들 ',
 			date: '2020.06.1',
 			ongoing: false,
 
@@ -50,11 +107,11 @@ const Form = () => {
 			{formItems.length ? (
 				<S.FormWrap>
 					{formItems.map((formItem) => (
-						<S.FormItem />
+						<FormItem key={formItem.id} formItem={formItem} />
 					))}
 				</S.FormWrap>
 			) : (
-				<p>"지금은 폼이 없습니다."</p>
+				<S.FormWrapNoItem>"지금은 폼이 없습니다."</S.FormWrapNoItem>
 			)}
 		</S.Container>
 	);

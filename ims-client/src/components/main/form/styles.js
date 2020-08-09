@@ -16,9 +16,11 @@ export const FormWrap = styled.div`
 	overflow: auto;
 `;
 
-export const FormItem = styled.div`
-	width: 24%;
-	height: 300px;
-	flex: 0 1 auto;
-	border: 1px solid gray;
+export const FormWrapNoItem = styled.p`
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 100%;
+	font-size: 24px;
+	font-weight: bold;
 `;

@@ -127,8 +127,8 @@ const Form = () => {
 	};
 
 	const onClickOne = (id) => {
-		setModalState('one');
 		setClickedOne(id);
+		setModalState('one');
 		onModalOnOff();
 	};
 

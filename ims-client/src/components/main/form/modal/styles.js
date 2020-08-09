@@ -48,7 +48,11 @@ export const ModalItemButton = styled.button`
 	font-size: 32px;
 	font-weight: bold;
 	border-radius: ${(props) =>
-		props.color === 'red' ? '0 0 20px 0' : '0 0 0 20px'};
+		props.position === 'right'
+			? '0 0 20px 0'
+			: props.position === 'left'
+			? '0 0 0 20px'
+			: '0 0 20px 20px'};
 
 	transition: 0.3s all ease-in-out;
 

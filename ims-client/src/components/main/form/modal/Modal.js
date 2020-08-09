@@ -22,27 +22,32 @@ const Modal = (props) => {
 				) : (
 					<S.ModalText>선택한 항목을 삭제하시겠습니까?</S.ModalText>
 				)}
-				<S.ModalItemWrap>
-					{checkedCount === 0 ? (
-						<S.ModalItemButton onClick={onModalOnOff}>0</S.ModalItemButton>
-					) : (
-						<div>no 0</div>
-					)}
-
-					<S.ModalItemButton onClick={onModalOnOff}>취소</S.ModalItemButton>
-					{modalState === 'items' ? (
-						<S.ModalItemButton color="red" onClick={onDeleteItems}>
-							삭제
+				{modalState === 'one' ||
+				(modalState === 'items' && checkedCount !== 0) ? (
+					<S.ModalItemWrap>
+						<S.ModalItemButton onClick={onModalOnOff} position="left">
+							취소
 						</S.ModalItemButton>
-					) : (
-						<S.ModalItemButton
-							color="red"
-							onClick={() => onDeleteOne(clickedOne)}
-						>
-							삭제
+						{modalState === 'items' ? (
+							<S.ModalItemButton position="right" onClick={onDeleteItems}>
+								삭제
+							</S.ModalItemButton>
+						) : (
+							<S.ModalItemButton
+								position="right"
+								onClick={() => onDeleteOne(clickedOne)}
+							>
+								삭제
+							</S.ModalItemButton>
+						)}
+					</S.ModalItemWrap>
+				) : (
+					<S.ModalItemWrap>
+						<S.ModalItemButton onClick={onModalOnOff} position="only">
+							확인
 						</S.ModalItemButton>
-					)}
-				</S.ModalItemWrap>
+					</S.ModalItemWrap>
+				)}
 			</S.ModalMain>
 		</S.Container>
 	);

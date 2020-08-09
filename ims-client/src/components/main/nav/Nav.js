@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import * as S from './styles';
 import NavItem from './navItem/NavItem';
 
@@ -30,11 +30,25 @@ const Nav = () => {
 		},
 	]);
 
+	const onNavItemClick = (id) => {
+		setNavItems(
+			navItems.map((navItem) =>
+				navItem.id === id
+					? { ...navItem, checked: true }
+					: { ...navItem, checked: false },
+			),
+		);
+	};
+
 	return (
 		<S.Container>
 			<S.NavFirstItem />
 			{navItems.map((navItem, index) => (
-				<NavItem key={navItem.id} navItem={navItem} />
+				<NavItem
+					key={navItem.id}
+					navItem={navItem}
+					onNavItemClick={onNavItemClick}
+				/>
 			))}
 		</S.Container>
 	);

@@ -4,7 +4,7 @@ export const Container = styled.div`
 	display: flex;
 	position: relative;
 	width: 23%;
-	height: 250px;
+	height: 245px;
 	margin: 6px 1%;
 	background: #f0f0f0;
 	border: 1px solid gray;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
-		transform: scale(1.08);
+		transform: scale(1.05);
 	}
 	&:hover > div {
 		display: flex;

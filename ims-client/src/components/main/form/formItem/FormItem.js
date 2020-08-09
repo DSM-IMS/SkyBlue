@@ -6,6 +6,7 @@ import { FaPen } from 'react-icons/fa';
 
 const FormItem = (props) => {
 	const { id, title, date, ongoing, checked } = props.formItem;
+	const { onDeleteOne } = props;
 
 	return (
 		<S.Container>
@@ -17,7 +18,7 @@ const FormItem = (props) => {
 					<S.FormItemHeaderItem>
 						<FaPen />
 					</S.FormItemHeaderItem>
-					<S.FormItemHeaderItem>
+					<S.FormItemHeaderItem onClick={() => onDeleteOne(id)}>
 						<BsFillTrashFill />
 					</S.FormItemHeaderItem>
 					<S.FormItemHeaderItem>

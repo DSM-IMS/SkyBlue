@@ -103,18 +103,31 @@ const Form = () => {
 		},
 	]);
 
+	const onDeleteOne = (id) => {
+		setFormItems(formItems.filter((formItem) => id !== formItem.id));
+	};
+
+	const onDeleteItems = (e) => {
+		e.preventDefault();
+		setFormItems(formItems.filter((formItem) => !formItem.checked));
+	};
+
 	return (
 		<S.Container>
 			{formItems.length ? (
 				<S.FormWrap>
 					{formItems.map((formItem) => (
-						<FormItem key={formItem.id} formItem={formItem} />
+						<FormItem
+							key={formItem.id}
+							formItem={formItem}
+							onDeleteOne={onDeleteOne}
+						/>
 					))}
 				</S.FormWrap>
 			) : (
 				<S.FormWrapNoItem>"지금은 폼이 없습니다."</S.FormWrapNoItem>
 			)}
-			<FormFooter />
+			<FormFooter onDeleteItems={onDeleteItems} />
 		</S.Container>
 	);
 };

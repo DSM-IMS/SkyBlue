@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as S from './styles';
 import FormItem from './formItem/FormItem';
 import FormFooter from './footer/FormFooter';
@@ -102,6 +102,14 @@ const Form = () => {
 			checked: false,
 		},
 	]);
+
+	useEffect(() => {
+		setFormItems(
+			formItems.map((formItem) =>
+				formItem.ongoing ? { ...formItem, checked: false } : formItem,
+			),
+		);
+	}, []);
 
 	const onDeleteOne = (id) => {
 		setFormItems(formItems.filter((formItem) => id !== formItem.id));

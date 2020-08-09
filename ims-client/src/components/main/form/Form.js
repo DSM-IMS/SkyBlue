@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import * as S from './styles';
 import FormItem from './formItem/FormItem';
 import FormFooter from './footer/FormFooter';
+import Modal from './modal/Modal';
 
 const Form = () => {
+	const [modalOnOff, setModalOnOff] = useState(false);
+	const [modalState, setModalState] = useState('one');
+	const [clickedOne, setClickedOne] = useState('');
+	const [checkedCount, setCheckedCount] = useState(0);
 	const [formItems, setFormItems] = useState([
 		{
 			id: 1,
@@ -104,6 +109,12 @@ const Form = () => {
 	]);
 
 	useEffect(() => {
+		let count = 0;
+		formItems.map((formItem) => (formItem.checked ? count++ : ''));
+		setCheckedCount(count);
+	}, [formItems]);
+
+	useEffect(() => {
 		setFormItems(
 			formItems.map((formItem) =>
 				formItem.ongoing ? { ...formItem, checked: false } : formItem,
@@ -111,13 +122,30 @@ const Form = () => {
 		);
 	}, []);
 
+	const onModalOnOff = () => {
+		setModalOnOff(!modalOnOff);
+	};
+
+	const onClickOne = (id) => {
+		setModalState('one');
+		setClickedOne(id);
+		onModalOnOff();
+	};
+
+	const onClickItems = () => {
+		setModalState('items');
+		onModalOnOff();
+	};
+
 	const onDeleteOne = (id) => {
 		setFormItems(formItems.filter((formItem) => id !== formItem.id));
+		onModalOnOff();
 	};
 
 	const onDeleteItems = (e) => {
 		e.preventDefault();
 		setFormItems(formItems.filter((formItem) => !formItem.checked));
+		onModalOnOff();
 	};
 
 	const onToggle = (id) => {
@@ -132,6 +160,16 @@ const Form = () => {
 
 	return (
 		<S.Container>
+			{modalOnOff && (
+				<Modal
+					modalState={modalState}
+					clickedOne={clickedOne}
+					checkedCount={checkedCount}
+					onModalOnOff={onModalOnOff}
+					onDeleteOne={onDeleteOne}
+					onDeleteItems={onDeleteItems}
+				/>
+			)}
 			{formItems.length ? (
 				<S.FormWrap>
 					{formItems.map((formItem) => (
@@ -139,14 +177,14 @@ const Form = () => {
 							key={formItem.id}
 							formItem={formItem}
 							onToggle={onToggle}
-							onDeleteOne={onDeleteOne}
+							onClickOne={onClickOne}
 						/>
 					))}
 				</S.FormWrap>
 			) : (
 				<S.FormWrapNoItem>"지금은 폼이 없습니다."</S.FormWrapNoItem>
 			)}
-			<FormFooter onDeleteItems={onDeleteItems} />
+			<FormFooter onClickItems={onClickItems} />
 		</S.Container>
 	);
 };

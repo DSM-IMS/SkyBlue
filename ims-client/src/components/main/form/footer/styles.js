@@ -8,12 +8,15 @@ export const Container = styled.form`
 	border-top: 1px solid gray;
 `;
 
-export const FormItem = styled.button`
-	min-width: 200px;
+export const FormItem = styled.div`
+	display: flex;
+	min-width: 160px;
 	height: 100%;
 	border: none;
 	border-right: 1px solid gray;
 	background: #d9d9d9;
+	justify-content: center;
+	align-items: center;
 
 	transition: all 0.3s ease-in-out;
 

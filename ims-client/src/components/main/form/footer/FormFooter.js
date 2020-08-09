@@ -5,14 +5,14 @@ import { FaSearch } from 'react-icons/fa';
 import { IoMdAddCircle } from 'react-icons/io';
 
 const FormFooter = (props) => {
-	const { onDeleteItems } = props;
+	const { onClickItems } = props;
 
 	return (
 		<S.Container>
 			<S.FormItem>
 				<IoMdAddCircle />
 			</S.FormItem>
-			<S.FormItem onClick={onDeleteItems}>
+			<S.FormItem onClick={onClickItems}>
 				<BsFillTrashFill />
 			</S.FormItem>
 			<S.FormSearchItem>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './styles';
 import FormItem from './formItem/FormItem';
+import FormFooter from './footer/FormFooter';
 
 const Form = () => {
 	const [formItems, setFormItems] = useState([
@@ -113,6 +114,7 @@ const Form = () => {
 			) : (
 				<S.FormWrapNoItem>"지금은 폼이 없습니다."</S.FormWrapNoItem>
 			)}
+			<FormFooter />
 		</S.Container>
 	);
 };

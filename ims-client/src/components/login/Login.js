@@ -6,7 +6,7 @@ const Login = () => {
 		<S.Container>
 			<S.Section>
 				<S.ArticleInput type="text" placeholder="ID" />
-				<S.ArticleInput type="text" placeholder="PW" />
+				<S.ArticleInput type="password" placeholder="PW" />
 				<S.ArticleSubmit type="submit" value="로그인" />
 				<S.ArticleWrap as="span">
 					<S.ArticleCheckbox type="checkbox" />

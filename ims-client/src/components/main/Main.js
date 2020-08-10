@@ -8,7 +8,7 @@ const Main = () => {
 	return (
 		<S.Container>
 			<Nav />
-			<Route path="/main/form" component={Form} />
+			<Route exact path="/main" component={Form} />
 		</S.Container>
 	);
 };

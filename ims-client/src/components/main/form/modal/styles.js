@@ -43,6 +43,7 @@ export const ModalItemWrap = styled.div`
 export const ModalItemButton = styled.button`
 	width: 100%;
 	height: 100%;
+	border: none;
 	border-top: 1px solid gray;
 	border-right: 1px solid gray;
 	font-size: 32px;

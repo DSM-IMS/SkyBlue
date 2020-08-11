@@ -21,6 +21,7 @@ const ManageForm = () => {
 				>
 					결과 통계 보기
 				</S.SelectNavItem>
+				<S.NonSelectNavItem />
 			</S.SelectNav>
 			<ManageFormRouting />
 		</S.Container>

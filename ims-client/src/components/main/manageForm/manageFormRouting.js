@@ -6,12 +6,12 @@ import ResultForm from './resultForm/ResultForm';
 
 const ManageFormRouting = () => {
 	return (
-		<S.Container>
+		<S.RoutingConatiner>
 			<Switch>
 				<Route path="/main/form/create" component={CreateForm} />
 				<Route path="/main/form/result" component={ResultForm} />
 			</Switch>
-		</S.Container>
+		</S.RoutingConatiner>
 	);
 };
 

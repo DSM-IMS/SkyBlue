@@ -14,6 +14,7 @@ export const FormItem = styled.div`
 	height: 100%;
 	border: none;
 	border-right: 1px solid gray;
+	color: black;
 	background: #d9d9d9;
 	justify-content: center;
 	align-items: center;

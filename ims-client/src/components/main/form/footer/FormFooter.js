@@ -3,13 +3,14 @@ import * as S from './styles';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { FaSearch } from 'react-icons/fa';
 import { IoMdAddCircle } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const FormFooter = (props) => {
 	const { onClickItems } = props;
 
 	return (
 		<S.Container>
-			<S.FormItem>
+			<S.FormItem as={Link} to="/main/form/create">
 				<IoMdAddCircle />
 			</S.FormItem>
 			<S.FormItem onClick={onClickItems}>

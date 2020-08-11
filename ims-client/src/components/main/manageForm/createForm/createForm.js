@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from './styles';
 
-const createForm = () => {
-	return <S.Container></S.Container>;
+const CreateForm = () => {
+	return <S.Container>1</S.Container>;
 };
 
-export default createForm;
+export default CreateForm;

@@ -31,7 +31,7 @@ export const NonSelectNavItem = styled.div`
 `;
 
 export const SelectNavItem = styled.a`
-	min-width: 140px;
+	min-width: 180px;
 	height: 100%;
 	border-right: 1px solid gray;
 	border-bottom: 1px solid gray;
@@ -46,7 +46,7 @@ export const SelectNavItem = styled.a`
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
-		min-width: 160px;
+		min-width: 220px;
 	}
 `;
 

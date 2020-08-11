@@ -8,7 +8,7 @@ const Routing = () => {
 		<Switch>
 			<Route path="/" component={Login} exact />
 			<Route path="/main/" component={Main} />
-			{/* <Route component={} /> */}
+			{/* 404 페이지 <Route component={} /> */}
 		</Switch>
 	);
 };

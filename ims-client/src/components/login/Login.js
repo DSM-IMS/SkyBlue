@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import * as S from './styles';
+import axios from 'axios';
 
 const Login = () => {
+	// const [id, setId] = useState('');
+	// const [pw, setPw] = useState('');
+	// const [isLogin, setIsLogin] = useState(false);
+
+	// const onChangeId = useCallback((e) => setId(e.target.value), []);
+	// const onChangePw = useCallback((e) => setPw(e.target.value), []);
+	// const onLogin = async (e) => {
+	// 	e.preventDefault();
+
+	// 	try {
+	// 		const response = await axios
+	// 			.post('', {
+	// 				id: id,
+	// 				pw: pw,
+	// 			})
+	// 			.then(console.log(response))
+	// 			.then(onLoginSuccess);
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	} finally {
+	// 	}
+
+	// 	fetch('', loginFetchInfo).then(setIsLogin(true));
+	// };
+
+	// const onLoginSuccess = (response) => {
+	// 	const { accessToken } = response.data;
+	// };
+
 	return (
 		<S.Container>
 			<S.Section>
